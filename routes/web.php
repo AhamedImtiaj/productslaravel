@@ -24,6 +24,7 @@ Route::group(['middleware'=>'auth'],function () {
     });
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/redirects', [ProductController::class, 'index'])->name('redirects');
 
 
 

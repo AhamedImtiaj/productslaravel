@@ -4,19 +4,31 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 class ProductController extends Controller
 {
     
+    // public function index()
+    // {
+    //     $products = Product::latest()->paginate(5);
+  
+    //     return view('products.index',compact('products'))
+    //         ->with('i', (request()->input('page', 1) - 1) * 5);
+    // }
     public function index()
     {
+        $role = Auth::user()->role;
         $products = Product::latest()->paginate(5);
-  
-        return view('products.index',compact('products'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
-    }
+       
+        {
+            return view('products.index',compact('products','role'));
+            
+        }
+        
    
+    }
    
     public function create()
     {

@@ -4,6 +4,9 @@
     @php
         $i = 0;
     @endphp
+    @php
+    
+@endphp
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -56,9 +59,7 @@
             <div class="pull-right" style="text-align: right">
                 <h2 style="color:royalblue">King Imtiaj Crud Project</h2>
             </div>
-            <div class="pull-left">
-                <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
-            </div>
+            
         </div>
     </div>
     
@@ -82,25 +83,9 @@
             <td><img src="/image/{{ $product->image }}" width="100px"></td>
             <td>{{ $product->name }}</td>
             <td>{{ $product->detail }}</td>
-            
-            @if ( $role=='1')
             <td>
-              <form action="{{ route('products.destroy',$product->id) }}" method="POST">
-   
-                  <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
-    
-                  <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
-   
-                  @csrf
-                  @method('DELETE')
-      
-                  <button type="submit" class="btn btn-danger">Delete</button>
-              </form>
-          </td>
-          @else
-          <td>lewra</td>
-            @endif
-          
+                
+            </td>
         </tr>
         @endforeach
     </table>
