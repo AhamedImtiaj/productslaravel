@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,6 +26,6 @@ Route::group(['middleware'=>'auth'],function () {
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/redirects', [ProductController::class, 'index'])->name('redirects');
-
+// Route::get('/register', [RegisterController::class, 'index'])->name('register');
 
 
