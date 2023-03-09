@@ -56,9 +56,11 @@
             <div class="pull-right" style="text-align: right">
                 <h2 style="color:royalblue">King Imtiaj Crud Project</h2>
             </div>
+            @if  ( $role=='1')
             <div class="pull-left">
                 <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
             </div>
+            @endif
         </div>
     </div>
     
